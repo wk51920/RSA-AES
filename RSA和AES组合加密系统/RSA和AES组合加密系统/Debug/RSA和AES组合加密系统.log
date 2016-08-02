@@ -1,0 +1,21 @@
+﻿生成启动时间为 2013/6/4 16:44:57。
+     1>项目“C:\Users\sony\Documents\Visual Studio 2012\Projects\RSA和AES组合加密系统\RSA和AES组合加密系统\RSA和AES组合加密系统.vcxproj”在节点 2 上(Build 个目标)。
+     1>ClCompile:
+         D:\Program Files\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _WINDOWS /D _DEBUG /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MTd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"stdafx.h" /Fp"Debug\RSA和AES组合加密系统.pch" /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt "RSA和AES组合加密系统Dlg.cpp"
+         RSA和AES组合加密系统Dlg.cpp
+     1>c:\users\sony\documents\visual studio 2012\projects\rsa和aes组合加密系统\rsa和aes组合加密系统\rsa和aes组合加密系统dlg.cpp(184): warning C4244: “=”: 从“wchar_t”转换到“char”，可能丢失数据
+     1>c:\users\sony\documents\visual studio 2012\projects\rsa和aes组合加密系统\rsa和aes组合加密系统\rsa和aes组合加密系统dlg.cpp(216): warning C4244: “=”: 从“wchar_t”转换到“char”，可能丢失数据
+     1>c:\users\sony\documents\visual studio 2012\projects\rsa和aes组合加密系统\rsa和aes组合加密系统\rsa和aes组合加密系统dlg.cpp(244): warning C4244: “=”: 从“wchar_t”转换到“char”，可能丢失数据
+     1>c:\users\sony\documents\visual studio 2012\projects\rsa和aes组合加密系统\rsa和aes组合加密系统\rsa和aes组合加密系统dlg.cpp(279): warning C4244: “=”: 从“wchar_t”转换到“char”，可能丢失数据
+       Link:
+         D:\Program Files\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\sony\Documents\Visual Studio 2012\Projects\RSA和AES组合加密系统\Debug\RSA和AES组合加密系统.exe" /INCREMENTAL /NOLOGO /NODEFAULTLIB:LIBC.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /manifestinput:"D:\Program Files\Microsoft Visual Studio 11.0\VC\Include\Manifest\dpiaware.manifest" /DEBUG /PDB:"C:\Users\sony\Documents\Visual Studio 2012\Projects\RSA和AES组合加密系统\Debug\RSA和AES组合加密系统.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /ENTRY:"wWinMainCRTStartup" /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\sony\Documents\Visual Studio 2012\Projects\RSA和AES组合加密系统\Debug\RSA和AES组合加密系统.lib" /MACHINE:X86 "Debug\RSA和AES组合加密系统.res"
+         "Debug\RSA和AES组合加密系统.obj"
+         "Debug\RSA和AES组合加密系统Dlg.obj"
+         Debug\stdafx.obj
+         ms32.lib
+         RSA和AES组合加密系统.vcxproj -> C:\Users\sony\Documents\Visual Studio 2012\Projects\RSA和AES组合加密系统\Debug\RSA和AES组合加密系统.exe
+     1>已完成生成项目“C:\Users\sony\Documents\Visual Studio 2012\Projects\RSA和AES组合加密系统\RSA和AES组合加密系统\RSA和AES组合加密系统.vcxproj”(Build 个目标)的操作。
+
+生成成功。
+
+已用时间 00:00:02.04

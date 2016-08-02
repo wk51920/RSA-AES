@@ -1,0 +1,177 @@
+﻿一．MIRACL简介
+Miracl：Miracl库是Shamus Software Ltd开发的一个大数库，它的使用许可针对教育科学研究或者非商业目的地应用是免费的。在应用上它是一个c语言的
+库，同时提供了几个较为简单的c++包装类。在功能上它不但提供了高精度的大整数和分数的各种数学运算操作而且提供了很多密码学算法中的功能模块，
+如SHA、AES、DSA等中的一些底层操作。最为特别的是它还提供了很多椭圆曲线密码体制中的底层功能模块。由于Miracl库的内部实现采用了很多的汇编层的
+代码，故运行速度也非常快。
+ 
+二．MIRACL常用函数调用手册
+声明：此处只列出和大数相关的简单运算函数，以及产生大数随机数的函数调用手册，具体请查看manual.doc文档。不当之处，请大家批评指正！
+ 
+函数原型: void absol(big x, big y);
+功能说明: 取x的绝对值，y=|x|
+ 
+ 
+函数原型: void add(big x, big y, big z);
+功能说明: 两个大数相加，z=x+y
+Example: add(x,x,x); // This doubles the value of x.
+ 
+ 
+函数原型: void bigbits(int n, big x);
+功能说明: 产生一个n位的大整数，初始化随机种子由irand函数实现
+Example: bigbits(100,x); //This generates a 100 bitrandom number
+ 
+ 
+函数原型: int cinstr(big x, char*s);
+功能说明: 将大数字符串转换成大数
+返回值: 输入字符数的个数
+Example:    mip->IOBASE=16; // input large hex number into big x
+            cinstr(x,”AF12398065BFE4C96DB723A”);
+ 
+ 
+函数原型: int compare(big x, big y);
+功能说明: 比较两个大数的大小
+返回值: x>y时返回+1, x=y时返回0, x<y时返回-1
+ 
+ 
+函数原型: void convert(int n, big x);
+功能说明: 将一个整数n转换成一个大数x
+ 
+ 
+函数原型: void copy(big x, big y);
+功能说明: 将一个大数赋值给另一个大数，y=x
+ 
+ 
+函数原型: int cotstr(big x, char *s);
+功能说明: 将一个大数根据其进制转换成一个字符串
+返回值: 字符串长度
+ 
+ 
+函数原型: void decr(big x, int n, big z) ;
+功能说明: 将一个大数减去一个整数， z=x-n.
+ 
+ 
+函数原型: void divide(big x, big y, big z);
+功能说明: 两个大数相除，z=x/y; x=x mod y，当变量y和z相同时，x为余数，商不返回（即y的值不变）；当x和z相同时，x为商，余数不返回。
+Example:    divide(x,y,y);//x为余数，y值不变
+ 
+ 
+函数原型: BOOL divisible(big x, big y)
+功能说明: 测试x能否整除y
+返回值: y除x余数为0，返回TRUE，否则返回FALSE
+ 
+ 
+函数原型: intigcd(int x, int y) ;
+功能说明: 返回两个整数的最大公约数
+ 
+函数原型: void incr(big x, int n, big z);
+功能说明: 将一个大数加上一个整数， z=x+n
+Example:    incr(x,2,x);  /* This increments x by 2. */
+ 
+ 
+函数原型: void mirkill(big x);
+功能说明: 释放内存大数所占的内存
+ 
+ 
+函数原型: miracl *mirsys(int nd, int nb);
+功能说明: 初始化MIRACL系统，该函数必须在调用MIRACL库函数之前先执行
+Example:    miracl *mip=mirsys(500,10);//初始化500位的10进行制数
+ 
+ 
+函数原型: void mirexit();
+功能说明: 清除MIRACL系统，释放所有内部变量
+ 
+ 
+函数原型: void multiply(big x, big y, big z);
+功能说明: 两个大数相乘，z=x.y
+ 
+ 
+函数原型: void negify(big x, big y);
+功能说明: 大数取负号，y=-x.
+ 
+ 
+函数原型: int numdig(big x);
+功能说明: 返回大数x中数字的个数
+ 
+ 
+函数原型: void premult(big x, int n, big z);
+功能说明: 一个大数乘以一个整数，z=n.x
+ 
+ 
+函数原型: int subdiv(big x, int n, big z);
+功能说明: 一个大数除以一个整数，z=x/n.
+返回值: 余数
+ 
+ 
+函数原型: BOOL subdivisible(big x, int n)
+功能说明: 测试n能否整除x
+返回值: x除以n余数为0，返回TRUE，否则返回FALSE
+ 
+ 
+函数原型: void bigdig(int n, int b, big x);
+功能说明: 产生一个指定长度的进制的随机数，该函数使用内置的随机数发生器，初始化种子调用irand函数
+Example: bigdig(100,10,x);  //产生一个100位的10进制随机数
+ 
+函数原型: void bigrand(big w, big x);
+功能说明: 使用内置的随机数发生器，产生一个小于w的大数随机数，x<w
+ 
+ 
+函数原型:   int egcd(bigx, big y, big z);
+功能说明:计算两个大数的最大公约数，z=gcd(x,y)
+ 
+ 
+函数原型: void expb2(int n, big x)
+功能说明: 计算2的n次方的大数
+Example:    expb2(1398269,x);   //2^1398269
+            decr(x,1,x);        //x = x - 1
+            mip->IOBASE=10;     //使用10进制
+            cotnum(x,stdout);   //输出到屏幕
+This calculates and prints out the largest known primenumber (on a true 32-bit computer with lots of memory!)
+ 
+函数原型:   void expint(intb, int n, big x);
+功能说明: 计算b的n次方的大数
+ 
+ 
+函数原型: void fft_mult(big x, big y, big z);
+功能说明: 使用Fast Fourier算法计算两个大数乘积，z=x.y
+ 
+ 
+函数原型:   unsigned int invers(unsigned int x, unsigned int y);
+功能说明:计算两个无符号整数（要求互素）的模逆，返回x-1  mod y
+ 
+ 
+函数原型:   BOOL isprime(bigx);
+功能说明:判断一个大数是否为素数，使用概率测试算法
+返回值: x为素数返回TRUE，否则返回FALSE
+ 
+ 
+函数原型: void powmod(big x, big y,big z, big w);
+功能说明: 模幂运算，w=x^y mod z
+ 
+ 
+函数原型: void sftbit(big x, int n,big z);
+功能说明:将一个大数左移或右移n位，n为正数时左移，负数时右移
+ 
+ 
+函数原型: int xgcd(bigx, big y, big xd, big yd, big z);
+功能说明: 计算两个大数的扩展最大公约数，也可以用来计算模逆，这个函数比mad 函数运算速度稍慢。z=gcd(x,y)=x.xd+y.yd
+Example:    xgcd(x,p,x,x,x);  //计算x^-1 mod p
+/* x = 1/x mod p  (p is prime) */
+ 
+ 函数原型：flash mirvar(int iv)
+ 功能说明：初始化一个大数的值，该存储可以通过函数mirkill()释放。
+
+ 函数原型：int cotnum(flash x,file *filep)
+ 功能说明:输出一个大数到屏幕或者文件中
+
+ 函数原型：int cotstr(flash x,char *string)
+ 功能说明:输出一个大数作为一个字符串
+
+ 函数原型：int big_to_bytes(int max,big x,char *ptr,BOOL justify)
+ 功能说明：将一个大数转化为MAX个字符的2进制字符串
+ 
+ 函数原型：int bytes_to_big(int len,char *ptr,big x)
+ 功能说明：将一个LEN字符的二进制字符串转化为一个大数X
+ 
+ 
+ 
+ 
